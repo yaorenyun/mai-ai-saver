@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mcdonalds-china": {
+      "command": "npx",
+      "args": ["-y", "@mcdonalds-china/mcp-server"],
+      "env": {
+        "MCD_API_KEY": "${MCD_API_KEY}",
+        "MCD_API_SECRET": "${MCD_API_SECRET}",
+        "MCD_STORE_ID": "${MCD_STORE_ID}"
+      }
+    }
+  },
+  "_comment": "麦当劳 MCP Server 脱敏配置示例。所有敏感项均为环境变量占位符，使用前请在本地环境导出真实值，切勿将真实密钥提交至仓库。实际包名与参数以 M-China/mcd-mcp-server 官方仓库为准。"
+}

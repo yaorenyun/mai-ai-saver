@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "name": "麦当劳演示菜单数据（MOCK）",
+    "version": "1.0.0",
+    "updated": "2026-10-17",
+    "note": "本文件为离线演示数据。真实运行时，菜单/价格/门店/优惠均由麦当劳 MCP 实时返回，以 MCP 数据为准。",
+    "currency": "CNY"
+  },
+  "items": [
+    { "id": "big_mac",        "name": "巨无霸",        "category": "主食", "price": 25.5, "satisfaction": 10, "tags": ["牛肉", "经典"] },
+    { "id": "mcspicy",        "name": "麦辣鸡腿堡",     "category": "主食", "price": 21.5, "satisfaction": 9,  "tags": ["鸡肉", "辣"] },
+    { "id": "grilled",        "name": "板烧鸡腿堡",     "category": "主食", "price": 22.5, "satisfaction": 9,  "tags": ["鸡肉", "不辣"] },
+    { "id": "double_cheese",  "name": "双层吉士堡",     "category": "主食", "price": 16.5, "satisfaction": 7,  "tags": ["牛肉", "小份"] },
+    { "id": "filet_o_fish",   "name": "麦香鱼",         "category": "主食", "price": 19.5, "satisfaction": 6,  "tags": ["鱼肉", "不辣"] },
+
+    { "id": "fries_l",        "name": "大薯条",         "category": "小食", "price": 14.5, "satisfaction": 5,  "tags": ["薯条"] },
+    { "id": "fries_m",        "name": "中薯条",         "category": "小食", "price": 12.0, "satisfaction": 4,  "tags": ["薯条"] },
+    { "id": "fries_s",        "name": "小薯条",         "category": "小食", "price": 9.5,  "satisfaction": 3,  "tags": ["薯条"] },
+    { "id": "mc_nuggets_5",   "name": "麦乐鸡(5块)",    "category": "小食", "price": 13.5, "satisfaction": 5,  "tags": ["鸡肉"] },
+    { "id": "apple_slices",   "name": "苹果片",         "category": "小食", "price": 8.5,  "satisfaction": 3,  "tags": ["健康", "低卡"] },
+    { "id": "corn_cup",       "name": "香甜玉米杯",     "category": "小食", "price": 8.0,  "satisfaction": 3,  "tags": ["健康", "低卡"] },
+
+    { "id": "coke_l",         "name": "大可乐",         "category": "饮料", "price": 11.5, "satisfaction": 4,  "tags": ["碳酸", "冰饮"] },
+    { "id": "coke_m",         "name": "中可乐",         "category": "饮料", "price": 9.5,  "satisfaction": 3,  "tags": ["碳酸", "冰饮"] },
+    { "id": "coke_s",         "name": "小可乐",         "category": "饮料", "price": 7.5,  "satisfaction": 2,  "tags": ["碳酸", "冰饮"] },
+    { "id": "milk_tea",       "name": "珍珠奶茶",       "category": "饮料", "price": 12.0, "satisfaction": 5,  "tags": ["奶茶"] },
+
+    { "id": "ice_cream",      "name": "圆筒冰淇淋",     "category": "甜品", "price": 6.0,  "satisfaction": 4,  "tags": ["冰淇淋", "低卡"] }
+  ],
+  "combos": [
+    {
+      "id": "big_mac_combo",
+      "name": "巨无霸套餐",
+      "category": "套餐",
+      "price": 39.5,
+      "satisfaction": 17,
+      "contains": ["big_mac", "fries_m", "coke_m"],
+      "original_price": 47.0,
+      "tags": ["经典", "牛肉"]
+    },
+    {
+      "id": "mcspicy_combo",
+      "name": "麦辣鸡腿堡套餐",
+      "category": "套餐",
+      "price": 36.5,
+      "satisfaction": 15,
+      "contains": ["mcspicy", "fries_m", "coke_m"],
+      "original_price": 43.0,
+      "tags": ["鸡肉", "辣"]
+    },
+    {
+      "id": "grilled_combo",
+      "name": "板烧鸡腿堡套餐",
+      "category": "套餐",
+      "price": 37.5,
+      "satisfaction": 15,
+      "contains": ["grilled", "fries_m", "coke_m"],
+      "original_price": 44.0,
+      "tags": ["鸡肉", "不辣"]
+    },
+    {
+      "id": "double_cheese_combo",
+      "name": "双层吉士堡套餐",
+      "category": "套餐",
+      "price": 32.0,
+      "satisfaction": 13,
+      "contains": ["double_cheese", "fries_m", "coke_m"],
+      "original_price": 38.0,
+      "tags": ["牛肉", "小份"]
+    },
+    {
+      "id": "one_plus_one",
+      "name": "1+1随心配",
+      "category": "套餐",
+      "price": 13.9,
+      "satisfaction": 6,
+      "contains": [],
+      "original_price": 13.9,
+      "note": "固定红区+白区各选一件，组合价 ¥13.9（示例按「小薯条+小可乐」计）",
+      "tags": ["超值", "固定"]
+    }
+  ],
+  "coupons": [
+    { "id": "c_50_8",  "name": "满50减8",      "type": "threshold",  "threshold": 50.0, "discount": 8.0,  "scope": "all" },
+    { "id": "c_30_5",  "name": "满30减5",      "type": "threshold",  "threshold": 30.0, "discount": 5.0,  "scope": "all" },
+    { "id": "c_85",    "name": "全场85折",     "type": "percentage", "rate": 0.85,      "max_discount": 10.0, "scope": "all" },
+    { "id": "c_bigmac","name": "巨无霸单品券", "type": "item",       "item_id": "big_mac", "discount": 6.0, "scope": "item" },
+    { "id": "c_fries", "name": "薯条单品券",   "type": "item",       "item_id": "fries_l", "discount": 4.0, "scope": "item" }
+  ],
+  "stores": [
+    { "id": "store_001", "name": "麦当劳(湖州菱湖餐厅)",  "distance_m": 800,  "has_drive_thru": false, "open_24h": false },
+    { "id": "store_002", "name": "麦当劳(湖州吴兴餐厅)",  "distance_m": 3200, "has_drive_thru": true,  "open_24h": true },
+    { "id": "store_003", "name": "麦当劳(南浔水晶晶餐厅)", "distance_m": 9600, "has_drive_thru": true,  "open_24h": false }
+  ],
+  "activities": [
+    { "id": "act_1024", "name": "1024程序员节·麦麦请你吃堡", "type": "festival", "desc": "10.24 当天凭工牌/ GitHub 主页到店领指定汉堡兑换券" },
+    { "id": "act_1p1",  "name": "1+1随心配长期优惠",          "type": "daily",   "desc": "红区+白区各选一件，¥13.9" }
+  ]
+}
